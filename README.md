@@ -10,6 +10,8 @@ This app requires to following technologies installed
 
 Clone the application
 
+`git clone https://github.com/enoch-tamulonis/provider-details.git`
+
 ### Step 2
 
 install gem dependencies
