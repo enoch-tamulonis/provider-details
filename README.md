@@ -23,3 +23,7 @@ Setup the DB
 Start the rails and css bundler
 
 `bin/dev`
+
+# Finally
+
+view the app at localhost:3000[http://localhost:3000]
