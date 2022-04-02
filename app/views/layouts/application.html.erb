@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ProviderDetails</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="bg-gray-700">
+    <%= render "layouts/alerts" %>
+    <div class="h-24 w-full bg-cover" style="background-image: url(<%= asset_url('checking-phone.jpg') %>); background-size: 36%">
+
+    </div>
+    <main class="container mx-auto px-5 flex">
+      <%= yield %>
+    </main>
+    <%= render "layouts/modal" %>
+  </body>
+</html>

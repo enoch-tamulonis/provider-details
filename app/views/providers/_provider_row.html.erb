@@ -1,0 +1,17 @@
+<tr class="w-full border-b border-indigo-400/75" id="<%= dom_id(provider) %>">
+  <td class="text-gray-200 p-4">
+    <%= provider.full_name %>
+  </td>
+  <td class="text-gray-200 p-4">
+    <%= provider.npi_number %>
+  </td>
+  <td class="text-gray-200 p-4">
+    <%= provider.primary_address %>
+  </td>
+  <td class="text-gray-200 p-4">
+    <%= provider.primary_taxonomy.desc %>
+  </td>
+  <td>
+    <a href="<%= provider_path(provider) %>" class="text-gray-200" data-turbo-frame="_top"> view more info </a>
+  </td>
+</tr>

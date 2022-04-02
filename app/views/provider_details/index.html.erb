@@ -1,0 +1,14 @@
+<div class="flex flex-col w-full py-4">
+  <h1 class="text-4xl text-gray-100 text-center mt-4"> Access Details About Providers </h1>
+  <p class="text-xl text-gray-200 text-center mt-4"> All you need is the 10 digit <%= link_to "NPI", npi_about_path, target: "_new", class: "border-b-2 border-transparent p-0.5 hover:border-gray-400 transition duration-300" %> number </p>
+  <div class="mx-auto mt-4">
+    <%= turbo_frame_tag :new_provider, src: new_provider_path, target: "_top" do %>
+
+    <% end %>
+  </div>
+  <div class="mt-24 w-full rounded-lg p-4 shadow-sm shadow-indigo-400">
+    <%= turbo_frame_tag :providers, src: providers_path do %>
+
+    <% end %>
+  </div>
+</div>

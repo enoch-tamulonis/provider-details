@@ -1,0 +1,5 @@
+<div id="alerts">
+  <% flash.each do |type, msg| %>
+    <%= render type, message: msg %>
+  <% end %>
+</div>

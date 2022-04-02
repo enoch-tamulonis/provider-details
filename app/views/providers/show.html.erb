@@ -1,0 +1,92 @@
+<div class="w-full h-full pt-4">
+  <div class="max-w-5xl w-full mx-auto">
+    <%= link_to provider_details_path, class: "text-gray-200" do %>
+      <%= render "shared/icons/chevron_left" %>
+    <% end %>
+  </div>
+  <h1 class="text-center text-4xl text-gray-100 mt-6">
+    <%= @provider.full_name %>
+  </h1>
+  <div class="max-w-5xl w-full rounded-lg bg-gray-800 mx-auto mt-8 py-4">
+    <div class="w-full grid grid-cols-5">
+      <div class="flex flex-col items-center">
+        <span class="text-gray-300 text-lg"> NPI </span>
+        <span class="text-gray-200 text-lg">
+          <%= @provider.npi_number %>
+        </span>
+      </div>
+      <div class="flex items-center text-gray-200">
+        <% unless @provider.organization? %>
+          <%= render "shared/icons/user" %>
+          <span class="text-lg ml-2"> Individual </span>
+        <% else %>
+          <%= render "shared/icons/office_building" %>
+          <span class="text-lg ml-2"> Organization </span>
+        <% end %>
+      </div>
+      <div class="flex items-center text-gray-200 col-span-2">
+        <span class="text-xl ml-2"> Certified on <%= @provider.certification_date.strftime("%m/%d/%Y") %></span>
+      </div>
+    </div>
+    <div class="w-full mt-4 px-4 grid lg:grid-cols-2">
+      <div class="mt-4 w-full flex flex-col text-gray-200">
+        <span class="text-lg text-gray-200"> Primary practice address </span>
+        <%= @provider.primary_address %>
+      </div>
+      <div class="mt-4 w-full flex flex-col text-gray-200">
+        <span class="text-lg text-gray-200"> Mailing address</span>
+        <%= @provider.mailing_address %>
+      </div>
+    </div>
+    <div class="w-full mt-4 px-4">
+      <span class="text-2xl text-gray-200"> Taxonomies </span>
+      <% @provider.taxonomies.each do |taxonomy| %>
+        <div class="grid grid-cols-5 w-full">
+          <div class="flex items-center text-gray-200 col-span-2">
+            <%= taxonomy.desc %>
+          </div>
+          <div class="flex flex-col text-gray-300">
+            <span class="text-lg text-gray-200"> Code </span>
+            <%= taxonomy.code %>
+          </div>
+          <div class="flex flex-col text-gray-300">
+            <span class="text-lg text-gray-200"> License </span>
+            <%= taxonomy.license %>
+          </div>
+          <div class="flex flex-col text-gray-300">
+            <span class="text-lg text-gray-200"> State </span>
+            <%= taxonomy.state %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <% if @provider.endpoints %>
+      <div class="w-full mt-4 px-4">
+        <span class="text-2xl text-gray-200"> Endpoints </span>
+        <% @provider.endpoints.each do |endpoint| %>
+          <div class="grid grid-cols-2 md:grid-cols-4 w-full gap-y-4">
+            <div class="flex items-center text-gray-200 col-span-1">
+              <%= endpoint["endpointTypeDescription"] || endpoint["useDescription"] %>
+            </div>
+            <div class="flex flex-col text-gray-300">
+              <%= endpoint["endpointType"] %>
+              <% if endpoint["endpointType"] == "OTHERS" %>
+                <%= endpoint["endpointTypeDescription"] %>
+              <% end %>
+            </div>
+            <div class="flex text-gray-300 col-span-2">
+              <span> <%= endpoint["address_1"] %>, </span>
+              <span class="ml-1"> <%= endpoint["city"] %>, </span>
+              <span class="ml-1"> <%= endpoint["state"] %>, </span>
+              <span class="ml-1"> <%= endpoint["country_code"] %> </span>
+            </div>
+            <div class="flex flex-col text-gray-300 col-span-2">
+              <span class="text-lg text-gray-300"> Endpoint </span>
+              <%= endpoint["endpoint"] %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

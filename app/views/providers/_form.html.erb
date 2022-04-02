@@ -1,0 +1,8 @@
+<%= form_with url: providers_path do |form| %>
+  <div class="flex" data-controller="utils" data-utils-string-value="hidden">
+    <%= form.text_field :npi_number, data: { action: "input->utils#removeClass" }, class: "bg-transparent text-gray-200 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-indigo-400/75" %>
+    <%= button_tag class: "p-2 rounded-lg bg-blue-500 text-green-50 cursor-pointer flex ml-4 hidden", data: { utils_target: "element" } do %>
+      <span class="mr-2"> <%= render "shared/icons/search" %> </span> find provider
+    <% end %>
+  </div>
+<% end %>
