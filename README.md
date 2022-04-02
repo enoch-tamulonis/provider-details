@@ -26,4 +26,4 @@ Start the rails and css bundler
 
 # Finally
 
-view the app at localhost:3000[http://localhost:3000]
+view the app at [localhost:3000](http://localhost:3000)
