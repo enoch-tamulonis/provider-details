@@ -10,20 +10,20 @@ This app requires to following technologies installed
 
 Clone the application
 
+`git clone https://github.com/enoch-tamulonis/provider-details.git`
+
 ### Step 2
-
-install gem dependencies
-
-`bundle install`
-
-# Step 3
 
 Setup the DB
 
 `rails db:setup`
 
-# Step 4
+# Step 3
 
 Start the rails and css bundler
 
 `bin/dev`
+
+# Finally
+
+view the app at [localhost:3000](http://localhost:3000)
