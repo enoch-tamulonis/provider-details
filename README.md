@@ -14,17 +14,11 @@ Clone the application
 
 ### Step 2
 
-install gem dependencies
-
-`bundle install`
-
-# Step 3
-
 Setup the DB
 
 `rails db:setup`
 
-# Step 4
+# Step 3
 
 Start the rails and css bundler
 
