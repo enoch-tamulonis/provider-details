@@ -7,7 +7,7 @@ class Provider < ApplicationRecord
 
   def self.create_from_npi(npi_number)
     provider_data = ProviderFinder.find(npi_number)
-    create(data: provider_data, npi_number: provider_data.try("number"))
+    create(data: provider_data, npi_number: provider_data.dig("number"))
   end
 
   def full_name
