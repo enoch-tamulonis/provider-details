@@ -8,8 +8,8 @@
     <h1 class="text-center text-4xl text-gray-100 mt-6">
       <%= @provider.full_name %>
     </h1>
-    <div class="max-w-6xl w-full rounded-lg mx-auto mt-8 py-4">
-      <div class="w-full grid grid-cols-5">
+    <div class="w-[80vw] lg:w-[70vw] xl:max-w-6xl xl:w-full rounded-lg mx-auto mt-8 py-4">
+      <div class="w-full grid grid-cols-3 md:grid-cols-5">
         <div class="flex flex-col items-center">
           <span class="text-gray-300 text-lg"> NPI </span>
           <span class="text-gray-200 text-lg">
@@ -25,7 +25,7 @@
             <span class="text-lg ml-2"> Organization </span>
           <% end %>
         </div>
-        <div class="flex items-center text-gray-200 col-span-2">
+        <div class="flex items-center text-gray-200 md:col-span-2">
           <span class="text-xl ml-2"> Certified on <%= @provider.certification_date.strftime("%m/%d/%Y") %></span>
         </div>
       </div>
