@@ -8,7 +8,7 @@
     <h1 class="text-center text-4xl text-gray-100 mt-6">
       <%= @provider.full_name %>
     </h1>
-    <div class="max-w-5xl w-full rounded-lg mx-auto mt-8 py-4">
+    <div class="max-w-6xl w-full rounded-lg mx-auto mt-8 py-4">
       <div class="w-full grid grid-cols-5">
         <div class="flex flex-col items-center">
           <span class="text-gray-300 text-lg"> NPI </span>
@@ -16,7 +16,7 @@
             <%= @provider.npi_number %>
           </span>
         </div>
-        <div class="flex items-center text-gray-200">
+        <div class="flex flex-col items-center text-gray-200">
           <% unless @provider.organization? %>
             <%= render "shared/icons/user" %>
             <span class="text-lg ml-2"> Individual </span>
