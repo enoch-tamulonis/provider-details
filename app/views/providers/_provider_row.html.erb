@@ -12,6 +12,6 @@
     <%= provider.primary_taxonomy.desc %>
   </td>
   <td>
-    <a href="<%= provider_path(provider) %>" class="text-gray-200" data-turbo-frame="_top"> view more info </a>
+    <a href="<%= modal_path(frame: dom_id(provider), url: provider_path(provider)) %>" class="text-gray-200" data-turbo-method="post"> view more info </a>
   </td>
 </tr>

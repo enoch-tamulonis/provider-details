@@ -1,0 +1,10 @@
+<div class="fixed h-[80vh] w-[80vw] bg-gray-700 rounded-lg top-[50%] left-[50%] -translate-x-[50%] -translate-y-[55%] p-2" data-controller="modal" data-action="click@window->modal#closeUnlessInside">
+  <div class="flex justify-end">
+    <a href="#" data-action="modal#close" class="w-10 text-gray-300">
+      <%= render "shared/icons/times" %>
+    </a>
+  </div>
+  <%= turbo_frame_tag frame, src: url do %>
+    <span class="text-2xl text-gray-200"> loading <i class="fa-solid fa-gear fa-spin"> </i> </span>
+  <% end %>
+</div>

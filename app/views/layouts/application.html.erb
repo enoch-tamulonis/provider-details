@@ -11,7 +11,7 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="bg-gray-700">
+  <body class="bg-[#28283E]" id="body">
     <%= render "layouts/alerts" %>
     <div class="h-24 w-full bg-cover" style="background-image: url(<%= asset_url('checking-phone.jpg') %>); background-size: 36%">
 
@@ -19,6 +19,5 @@
     <main class="container mx-auto px-5 flex">
       <%= yield %>
     </main>
-    <%= render "layouts/modal" %>
   </body>
 </html>
